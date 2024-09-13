@@ -13,4 +13,11 @@ Auth::routes([
     'verify' => false,
 ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//middleware untuk membatasi user, prefix agar semua route selalu di awali 'admin/' , as itu untuk route(admin...) atau namenya
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin' , 'as' => 'admin.'
+], function() {
+
+    //hasinya= guestbook.test/admin ->route('admin.index')
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index'); 
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+});
