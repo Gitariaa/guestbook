@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
 });
 
 Auth::routes([
@@ -20,4 +20,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin' , 'as' => 'admin.'
     //hasinya= guestbook.test/admin ->route('admin.index')
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index'); 
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+    //Route CRUD institution
+    Route::resource('/institution', App\Http\Controllers\InstitutionController::class);
 });
