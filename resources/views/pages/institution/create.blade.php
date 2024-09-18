@@ -25,7 +25,7 @@
                     </div>
                 <div>
                     <button type="submit" class="btn btn-success mb-1 "> Save </button>
-                    <a href="{{route('admin.institution.index')}}" class="btn btn-primary mb-1"> Kembali </a>
+                    
                     <a href="{{route('admin.institution.index')}}" class="btn btn-secondary mb-1"> Cancel </a>
                 </div>
             </div>

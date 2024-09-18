@@ -13,7 +13,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('admin.institution.index')}}" class="btn btn-sm btn-secondary mb-2"> Kembali </a>
+                    <a href="{{route('admin.institution.index')}}" class="btn btn-sm btn-secondary mb-2"> Back </a>
                     <table class="table table-striped table-brodered">
                         <tr>
                             <th>ID</th>
